@@ -45,8 +45,8 @@
 
 # referencias:
 <debemos siempre reconocer los créditos de partes del código que reutilizaremos, así como referencias a youtube, o referencias bibliográficas utilizadas para desarrollar el proyecto o la actividad>
-## https://x-team.com/blog/set-up-rabbitmq-with-docker-compose/vvvvvvvdvvv 
+## https://x-team.com/blog/set-up-rabbitmq-with-docker-compose/
 ## https://blog.logrocket.com/creating-a-web-server-with-golang/
-## url de donde tomo info para desarrollar este proyecto
+## https://github.com/sahansera/go-grpc
 
 #### versión README.md -> 1.0 (2023-Marzo)
