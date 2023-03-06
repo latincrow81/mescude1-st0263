@@ -15,70 +15,40 @@ servers:
   - url: https://unified-availability-service.api.patientpop.com
     description: Production server
 paths:
-  /v1/status:
+  /file_list:
     get:
-      summary: Retrieve service status
+      summary: Get file list
       parameters: [ ]
       responses:
         '200':
-          description: Service Available
+          description: Files available on server
           content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-        '503':
-          description: Service Unavailable
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-      description: Retrieve service status
-      security:
-        - apiKey: [ ]
-      operationId: get_status
-      x-openapi-router-controller: src.status.controllers.v1
-      x-amazon-apigateway-integration:
-        responses:
-          default:
-            statusCode: '200'
-        uri: ${network_lb_path}/v1/status
-        connectionType: VPC_LINK
-        connectionId: ${vpc_link}
-        httpMethod: GET
-        type: HTTP_PROXY
+            application/json: { }
+      description: Files available on server
+      operationId: get_file_list
+      x-openapi-router-controller: app.controllers
       tags:
-        - status
-  /v1/status:
-    get:
-      summary: Retrieve service status
-      parameters: [ ]
+        - file_list
+  /find/{wildcard}:
+    post:
+      summary: Find if file is in list
+      parameters:
+        - schema:
+            type: string
+          name: wildcard
+          in: path
+          required: true
       responses:
         '200':
-          description: Service Available
+          description: File Available
           content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-        '503':
-          description: Service Unavailable
+            application/json: { }
+        '404':
+          description: File not found
           content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Status'
-      description: Retrieve service status
-      security:
-        - apiKey: [ ]
-      operationId: get_status
-      x-openapi-router-controller: src.status.controllers.v1
-      x-amazon-apigateway-integration:
-        responses:
-          default:
-            statusCode: '200'
-        uri: ${network_lb_path}/v1/status
-        connectionType: VPC_LINK
-        connectionId: ${vpc_link}
-        httpMethod: GET
-        type: HTTP_PROXY
+            application/json: { }
+      description: find file in server
+      operationId: find_file
+      x-openapi-router-controller: app.controllers
       tags:
-        - status
-
+        - find_file

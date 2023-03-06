@@ -1,5 +1,6 @@
 import os
 
+import connexion
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
@@ -18,7 +19,9 @@ def create_app(environment='development'):
     from .auth.models import User, AnonymousUser
 
     # Instantiate app.
-    app = Flask(__name__)
+    app = connexion.FlaskApp(__name__)
+    app.add_api('../openapi.yml')
+    app.run(port=8080)
 
     # Set app config.
     env = os.environ.get('FLASK_ENV', environment)

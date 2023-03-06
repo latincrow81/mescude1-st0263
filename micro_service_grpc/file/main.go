@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"file/server/pb"
+	"google.golang.org/grpc"
 	"log"
 	"net"
 )
@@ -11,9 +12,9 @@ type server struct {
 	pb.UnimplementedArchiveServer
 }
 
-func (s *server) GetBookList(ctx context.Context, in *pb.GetFileListRequest) (*pb.GetFileListResponse, error) {
+func (s *server) GetFileList(ctx context.Context, in *pb.GetFileListRequest) (*pb.GetFileListResponse, error) {
 	return &pb.GetFileListResponse{
-		File: getFileList(),
+		Files: getFileList(),
 	}, nil
 }
 
@@ -28,4 +29,11 @@ func main() {
 	if err := s.Serve(listener); err != nil {
 		log.Fatalf("failed to serve: %v", err)
 	}
+}
+
+func getFileList() []*pb.File {
+	fileList := []*pb.File{{FileName: "file_2.extension"},
+		{FileName: "file_1.extension"},
+		{FileName: "file_3.extension"}}
+	return fileList
 }

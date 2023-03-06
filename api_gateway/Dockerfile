@@ -10,4 +10,4 @@ RUN pip install -r requirements.txt
 
 USER 1001
 
-EXPOSE 1337
+EXPOSE 8080
