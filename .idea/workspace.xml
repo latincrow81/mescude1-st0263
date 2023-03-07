@@ -5,27 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9593fabd-5968-4429-ab75-86c041bb3049" name="Changes" comment="wip grpc api gtw">
-      <change afterPath="$PROJECT_DIR$/api_gateway/app/controllers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api_gateway/app/services.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/micro_service_grpc/file/go.sum" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/micro_service_rmq/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/micro_service_rmq/.idea/micro_service_rmq.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/micro_service_rmq/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/micro_service_rmq/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/micro_service_rmq/consumer.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/micro_service_rmq/producer.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rabbitmq/rmq.conf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api_gateway/app/services/rmq_publisher.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_gateway/.idea/api_gateway.iml" beforeDir="false" afterPath="$PROJECT_DIR$/api_gateway/.idea/api_gateway.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api_gateway/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/api_gateway/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api_gateway/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_gateway/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_gateway/docker-entrypoint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/api_gateway/docker-entrypoint.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_gateway/openapi.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api_gateway/openapi.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_gateway/app/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_gateway/app/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_gateway/app/services.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_gateway/app/services.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api_gateway/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/api_gateway/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api_gateway/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_gateway/wsgi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro_service_grpc/file/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/micro_service_grpc/file/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/micro_service_grpc/file/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/micro_service_grpc/file/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,22 +52,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;TF_FMT&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/mauricioescudero/mescude1-st0263&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TF_FMT": "false",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/mauricioescudero/mescude1-st0263/api_gateway/app",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api_gateway/app" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/api_gateway/app/config" />
     </key>
@@ -114,7 +105,7 @@
       <updated>1677556526923</updated>
       <workItem from="1677556528358" duration="21000" />
       <workItem from="1678050567415" duration="10193000" />
-      <workItem from="1678140423816" duration="4900000" />
+      <workItem from="1678140423816" duration="11470000" />
     </task>
     <task id="LOCAL-00001" summary="wip grpc api gtw">
       <created>1678078661967</created>
@@ -123,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678078661967</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="wip grpc api gtw">
+      <created>1678146554930</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678146554930</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

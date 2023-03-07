@@ -7,7 +7,3 @@ RUN apk update && apk add gcc python3-dev musl-dev curl py3-setuptools
 
 ADD api_gateway .
 RUN pip install -r requirements.txt
-
-USER 1001
-
-EXPOSE 8080

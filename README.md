@@ -10,32 +10,14 @@
  comunicar por un middleware RPC y por un middleware MOM.
 #
 
+# Como ejecutar
 
-# 3. Descripción del ambiente de desarrollo y técnico: lenguaje de programación, librerias, paquetes, etc, con sus numeros de versiones.
+Este proyecto requiere Docker para funcionar.
 
-## como se compila y ejecuta.
-## detalles del desarrollo.
-## detalles técnicos
-## descripción y como se configura los parámetros del proyecto (ej: ip, puertos, conexión a bases de datos, variables de ambiente, parámetros, etc)
-## opcional - detalles de la organización del código por carpetas o descripción de algún archivo. (ESTRUCTURA DE DIRECTORIOS Y ARCHIVOS IMPORTANTE DEL PROYECTO, comando 'tree' de linux)
-## 
-## opcionalmente - si quiere mostrar resultados o pantallazos 
+<code>docker-compose up</code>
 
-# 4. Descripción del ambiente de EJECUCIÓN (en producción) lenguaje de programación, librerias, paquetes, etc, con sus numeros de versiones.
 
-# IP o nombres de dominio en nube o en la máquina servidor.
-
-## descripción y como se configura los parámetros del proyecto (ej: ip, puertos, conexión a bases de datos, variables de ambiente, parámetros, etc)
-
-## como se lanza el servidor.
-
-## una mini guia de como un usuario utilizaría el software o la aplicación
-
-## opcionalmente - si quiere mostrar resultados o pantallazos 
-
-# 5. otra información que considere relevante para esta actividad.
-
-# referencias:
+# referencias
 ## https://x-team.com/blog/set-up-rabbitmq-with-docker-compose/
 ## https://blog.logrocket.com/creating-a-web-server-with-golang/
 ## https://github.com/sahansera/go-grpc
