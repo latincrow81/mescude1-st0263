@@ -1,0 +1,8 @@
+version: '3.1'
+services:
+  file_server:
+    build: Dockerfile
+    ports:
+      - "2049:2049"
+    volumes:
+      - exports.txt:/etc/exports:ro

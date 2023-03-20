@@ -1,0 +1,15 @@
+services:
+  wordpress:
+    image: wordpress:6.0.1-php8.1
+    container_name: wp_1
+    restart: "no"
+    ports:
+      - "80"
+    environment:
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_USER: username
+      WORDPRESS_DB_PASSWORD: password
+      WORDPRESS_DB_NAME: wordpress
+      FS_METHOD: direct
+    volumes:
+      - /mnt/wordpress:/var/www/html

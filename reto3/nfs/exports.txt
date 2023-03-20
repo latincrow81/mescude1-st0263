@@ -1,0 +1,1 @@
+/var/nfs/general    10.128.0.0/16(rw,sync,no_root_squash,no_subtree_check)

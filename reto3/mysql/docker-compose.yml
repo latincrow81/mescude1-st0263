@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+  mysql:
+    image: mysql:8.0-debian
+    command: --default-authentication-plugin=mysql_native_password
+    restart: unless-stopped
+    cap_add:
+      - SYS_NICE
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: username
+      MYSQL_PASSWORD: password
+      MYSQL_RANDOM_ROOT_PASSWORD: "1"
+    volumes:
+      - ./reto3_db.sql:/docker-entrypoint-initdb.d/reto3_db.sql
