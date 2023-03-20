@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9593fabd-5968-4429-ab75-86c041bb3049" name="Changes" comment="wip grpc api gtw">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api_gateway/app/services/rmq_subscriber.py" beforeDir="false" afterPath="$PROJECT_DIR$/api_gateway/app/services/rmq_subscriber.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +97,7 @@
       <updated>1677556526923</updated>
       <workItem from="1677556528358" duration="21000" />
       <workItem from="1678050567415" duration="10193000" />
-      <workItem from="1678140423816" duration="12825000" />
+      <workItem from="1678140423816" duration="13290000" />
     </task>
     <task id="LOCAL-00001" summary="wip grpc api gtw">
       <created>1678078661967</created>
@@ -122,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678160628455</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="wip grpc api gtw">
+      <created>1678162034911</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678162034911</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
