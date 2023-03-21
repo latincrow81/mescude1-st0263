@@ -6,3 +6,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "2049:2049"
+    cap_add:
+      - SYS_ADMIN
+    environment:
+     NFS_LOG_LEVEL: DEBUG
+    

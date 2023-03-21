@@ -6,7 +6,7 @@ services:
     ports:
       - "80"
     environment:
-      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_HOST: 10.128.0.3:3306
       WORDPRESS_DB_USER: username
       WORDPRESS_DB_PASSWORD: password
       WORDPRESS_DB_NAME: wordpress
