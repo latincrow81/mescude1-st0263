@@ -3,7 +3,7 @@ services:
   wordpress:
     image: wordpress:6.0.1-php8.1
     container_name: wp_1
-    restart: "no"
+    restart: "unless-stopped"
     ports:
       - "80"
     environment:
