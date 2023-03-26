@@ -32,8 +32,20 @@ Desplegar un CMS wordpress empleando la tecnología de contenedores, con su prop
 
 El sitio se llama: reto3.azuloso.me.
 
+Se desplego de la siguiente manera:
+    - 2 instancias en servidores individuales de wordpress dockerizado (identicas). Inicializadas desde crontab con el script incluido server_start.sh
+    - 1 instancia para el servidor NFS instalado manualmente, se intento dockerizar pero se encontraron problemas con la imagen usada. quiza con mas timepo se podria contruir un mejor dockerfile basado en ubutu ya que los pasos de la guia en la referencia son simples.
+    - 1 instancia para el servidor de bases de datos dockerizada y con un volumen local, tambien iniciada con un script al inicio
+    - 1 instancia para el balanceador de cargas
+
+Se reservo una ip para el balanceador de cargas y se asigno a un subdominio en un dominio ya existente, y se genero un certificado manualemente usando freeSSL.org
+
+Todos los archivos y guias de referencia necesarias estan incluidas en el repositorio y readme.
+
+Preferente pero no necesariamente las instancias de base de datos y nfs deben iniciarse primero.
+
 #### referencias
-
-
+* https://www.digitalocean.com/community/tutorials/how-to-set-up-an-nfs-mount-on-ubuntu-20-04
+* https://www.digitalocean.com/community/tutorials/how-to-set-up-nginx-load-balancing-with-ssl-termination
 
 ##### versión README.md -> 1.0 (2023-Marzo)
