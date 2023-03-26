@@ -14,3 +14,5 @@ services:
       FS_METHOD: direct
     volumes:
       - /mnt/wordpress:/var/www/html
+    networks:
+      - defaul
