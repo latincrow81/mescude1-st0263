@@ -15,4 +15,4 @@ services:
     volumes:
       - /mnt/wordpress:/var/www/html
     networks:
-      - defaul
+      - default
